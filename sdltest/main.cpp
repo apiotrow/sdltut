@@ -1,9 +1,12 @@
-/*This source code copyrighted by Lazy Foo' Productions (2004-2015)
-and may not be redistributed without written permission.*/
 
 //Using SDL and standard IO
 #include <SDL.h>
 #include <stdio.h>
+
+//Memory leak detection
+#define _CRTDBG_MAP_ALLOC  
+#include <stdlib.h>  
+#include <crtdbg.h>  
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
@@ -81,7 +84,10 @@ void close()
 
 	//Destroy window
 	SDL_DestroyWindow(gWindow);
-	gWindow = NULL;
+	gWindow = NULL;	
+
+	//Debug -> Start Debugging to output memory leaks to console on program exit
+	_CrtDumpMemoryLeaks();
 
 	//Quit SDL subsystems
 	SDL_Quit();
