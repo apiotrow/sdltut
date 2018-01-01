@@ -1,5 +1,6 @@
 ﻿  main.cpp
 c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\crtdbg.h(302): warning C4005: '_malloca': macro redefinition
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\malloc.h(120): note: see previous definition of '_malloca'
+d:\code\c++\sdltest\sdltest\main.cpp(111): warning C4101: 'g': unreferenced local variable
   sdltest.vcxproj -> D:\code\c++\sdltest\Debug\sdltest.exe
   sdltest.vcxproj -> D:\code\c++\sdltest\Debug\sdltest.pdb (Partial PDB)

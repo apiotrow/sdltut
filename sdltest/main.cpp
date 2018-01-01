@@ -8,6 +8,16 @@
 #include <stdlib.h>  
 #include <crtdbg.h>  
 
+#include <iostream>
+
+// Include rand()
+#include <random>
+
+//Include time()
+#include <ctime>
+
+using namespace std;
+
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
@@ -20,6 +30,10 @@ bool loadMedia();
 
 //Frees media and shuts down SDL
 void close();
+
+void test();
+
+int randNum(int min, int max);
 
 //The window we'll be rendering to
 SDL_Window* gWindow = NULL;
@@ -93,8 +107,25 @@ void close()
 	SDL_Quit();
 }
 
+void test() {
+	int g;
+
+	cout << randNum(1, 5);
+}
+
+//random number between range
+int randNum(int min, int max) {
+	std::mt19937 rng;
+	rng.seed(std::random_device()());
+	std::uniform_int_distribution<std::mt19937::result_type> dist6(1, 24);
+
+	return dist6(rng);
+}
+
 int main(int argc, char* args[])
 {
+	test();
+
 	//Start up SDL and create window
 	if (!init())
 	{
